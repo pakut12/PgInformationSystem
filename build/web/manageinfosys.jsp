@@ -46,12 +46,38 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 overflow-auto" style="height:180px">
-                                            <ul class="list-group ">
-                                                
-                                            </ul> 
+                                            <label>ProgramList</label>
+                                            <hr>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" >Program</span>
+                                                <input type="text" class="form-control text-center" name="OS" id="OS">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" >ProgramKey</span>
+                                                <input type="text" class="form-control text-center" name="OS" id="OS">
+                                            </div>
+                                            <hr>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" >Program</span>
+                                                <input type="text" class="form-control text-center" name="OS" id="OS">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" >ProgramKey</span>
+                                                <input type="text" class="form-control text-center" name="OS" id="OS">
+                                            </div>
+                                            <hr>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" >Program</span>
+                                                <input type="text" class="form-control text-center" name="OS" id="OS">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" >ProgramKey</span>
+                                                <input type="text" class="form-control text-center" name="OS" id="OS">
+                                            </div>
+                                            <hr>
                                         </div>
                                         <div class="d-grid gap-2">
-                                            <button type="button" class="btn btn-success btn-sm mt-3" id="btn-getdata">ลงทะเบียน</button>
+                                            <button type="button" class="btn btn-success btn-sm mt-3" id="btn-getdata">เพิ่มข้อมูล</button>
                                         </div>
                                     </div>
                                 </div>
@@ -99,6 +125,7 @@
                         success:function(data){
                             var infosys = $.parseJSON(data);
                             console.log(infosys);
+                            $("#UserId").val(infosys.User);
                             $("#ComputerName").val(infosys.ComputerName);
                             $("#Ip").val(infosys.Ip);
                             $("#OS").val(infosys.OS);

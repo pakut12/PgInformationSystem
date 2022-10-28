@@ -21,25 +21,52 @@
                     <div class="card shadow col-md-9 col-sm-12 mx-auto">
                         <div class="card-header text-center">PgInformationSystem</div>
                         <div class="card-body">
-                            <table class="table table-striped table-sm table-bordered" id="mytable">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Program</th>
-                                        <th>Edit</th>
-                                        <th>Del</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>ID</td>
-                                        <td>Program</td>
-                                        <td>Edit</td>
-                                        <td>Del</td>
-                                    </tr>
-                                </tbody>
-                                
-                            </table>
+                            <div class="card mt-3 mx-auto col-sm-12 col-md-6">
+                                <div class="card-header">
+                                    Program
+                                </div>
+                                <div class="card-body">
+                                    <div class="row ">
+                                        <div class="col-md-12 col-sm-12  text-center">
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" >ProgramName</span>
+                                                <input type="text" class="form-control text-center" name="ProgramName" id="ProgramName">
+                                            </div>
+                                           
+                                            
+                                            <button type="button" class="btn btn-success btn-sm ">บันทึก</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    ViewProgram
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-striped table-sm table-bordered" id="mytable">
+                                        <thead>
+                                            <tr>
+                                                <th>ProgramID</th>
+                                                <th>ProgramName</th>
+                                                <th>Edit</th>
+                                                <th>Del</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Program_ID</td>
+                                                <td>Program</td>
+                                                <td>Edit</td>
+                                                <td>Del</td>
+                                            </tr>
+                                        </tbody>
+                                        
+                                    </table>
+                                </div>
+                            </div>
+                            
                             
                         </div>
                     </div>

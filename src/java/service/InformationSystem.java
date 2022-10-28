@@ -25,6 +25,11 @@ public class InformationSystem {
         return Ip;
     }
 
+    public static String GetUserPc() {
+        String userpc = System.getProperty("user.name");
+        return userpc;
+    }
+
     public static String GetProgram() {
         String txt = "";
         for (int n = 0; n < 100; n++) {

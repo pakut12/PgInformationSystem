@@ -35,6 +35,7 @@ public class GetDataInformationSystem extends HttpServlet {
                 String pcuser = request.getHeader("USER-AGENT");
 
                 JSONObject obj = new JSONObject();
+                obj.put("User", info.GetUserPc());
                 obj.put("ComputerName", info.GetComputerName());
                 obj.put("Ip", info.GetIp());
                 obj.put("OS", info.GetOs(pcuser));

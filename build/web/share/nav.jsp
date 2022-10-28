@@ -20,13 +20,18 @@
                 </li>
                 <li class="nav-item"> 
                     <a class="nav-link " aria-current="page" href="manageinfosys.jsp" id="page2">
-                        <i class="bi bi-people-fill"></i>
+                        <i class="bi bi-pc-display"></i>
                     ระบบจัดการข้อมูลคอมพิวเตอร์</a>
                 </li>
                 <li class="nav-item"> 
                     <a class="nav-link " aria-current="page" href="manageprogram.jsp" id="page3">
-                        <i class="bi bi-people-fill"></i>
+                        <i class="bi bi-pc-display"></i>
                     ระบบจัดการข้อมูลโปรเเกรม</a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link " aria-current="page" href="manageos.jsp" id="page4">
+                        <i class="bi bi-pc-display"></i>
+                    ระบบจัดการข้อมูลระบบปฏิบัติการ</a>
                 </li>
             </ul>
         </div>
