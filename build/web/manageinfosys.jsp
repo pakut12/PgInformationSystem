@@ -25,7 +25,7 @@
                                 <div class="card-header ">
                                     InformationSystem
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body ">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                             <div class="input-group input-group-sm mb-3">
@@ -61,7 +61,8 @@
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2">
-                                            <button type="button" class="btn-grad  " id="btn-getdata">เพิ่มข้อมูล</button>
+                                            <button type="button" class="btn-grad" id="btn-getdata">เพิ่มข้อมูล</button>
+                                            <button type="button" class="reset" id="btn-getdata">ล้างค่า</button>
                                         </div>
                                     </div>
                                 </div>
