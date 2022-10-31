@@ -45,9 +45,6 @@ public class GetDataInformationSystem extends HttpServlet {
             
             out.print(obj);
 
-          
-
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

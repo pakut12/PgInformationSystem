@@ -12,7 +12,7 @@
     <head>
         <%@include file="share/head.jsp"%> 
     </head>
-    
+  
     <body>
         <%@include file="share/nav.jsp"%> 
         <form id="MyForm">
@@ -22,7 +22,7 @@
                         <div class="card-header text-center">PgInformationSystem</div>
                         <div class="card-body">
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header ">
                                     InformationSystem
                                 </div>
                                 <div class="card-body">
@@ -61,7 +61,7 @@
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2">
-                                            <button type="button" class="btn btn-success btn-sm mt-3" id="btn-getdata">เพิ่มข้อมูล</button>
+                                            <button type="button" class="btn-grad  " id="btn-getdata">เพิ่มข้อมูล</button>
                                         </div>
                                     </div>
                                 </div>
