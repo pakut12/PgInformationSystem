@@ -4,6 +4,9 @@
  */
 package service;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -30,15 +33,42 @@ public class InformationSystem {
         return userpc;
     }
 
-    public static String GetProgram() {
-        String txt = "";
-        for (int n = 0; n < 100; n++) {
-            txt += "<li class='list-group-item'>";
-            txt += "<input class='form-check-input me-1' type='checkbox' name='Program' value='pg" + n + "'  id='pg" + n + "'>";
-            txt += "<label class='form-check-label stretched-link' for='pg" + n + "'>First checkbox</label>";
-            txt += "</li>";
+    public static String GetProgramFiles() throws IOException {
+        ProcessBuilder builder = new ProcessBuilder(
+                "cmd.exe", "/c", "cd \"C:\\Program Files\" && dir /b");
+        builder.redirectErrorStream(true);
+        Process p = builder.start();
+        BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        String line;
+        String ProgramFiles = "";
+        while (true) {
+            line = r.readLine();
+            if (line == null) {
+                break;
+            }
+            ProgramFiles += line + "<br>";
+        // System.out.println(line);
         }
-        return txt;
+        return ProgramFiles;
+    }
+
+    public static String GetProgramFilesx86() throws IOException {
+        ProcessBuilder builder = new ProcessBuilder(
+                "cmd.exe", "/c", "cd \"C:\\Program Files (x86)\" && dir /b");
+        builder.redirectErrorStream(true);
+        Process p = builder.start();
+        BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        String line;
+        String ProgramFilesx86 = "";
+        while (true) {
+            line = r.readLine();
+            if (line == null) {
+                break;
+            }
+            ProgramFilesx86 += line + "<br>";
+        // System.out.println(line);
+        }
+        return ProgramFilesx86;
     }
 
     public static String GetOs(String pcuser) {

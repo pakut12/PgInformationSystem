@@ -7,6 +7,8 @@ package src;
 import java.io.*;
 
 
+import java.net.URL;
+import java.net.URLConnection;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import org.json.simple.JSONObject;
@@ -29,30 +31,31 @@ public class GetDataInformationSystem extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            try {
+            
+            InformationSystem info = new InformationSystem();
+            String pcuser = request.getHeader("USER-AGENT");
 
-                InformationSystem info = new InformationSystem();
-                String pcuser = request.getHeader("USER-AGENT");
+            JSONObject obj = new JSONObject();
+            obj.put("User", info.GetUserPc());
+            obj.put("ComputerName", info.GetComputerName());
+            obj.put("Ip", info.GetIp());
+            obj.put("OS", info.GetOs(pcuser));
+            obj.put("ProgramFiles", info.GetProgramFiles());
+            obj.put("ProgramFilesx86", info.GetProgramFilesx86());
+            
+            out.print(obj);
 
-                JSONObject obj = new JSONObject();
-                obj.put("User", info.GetUserPc());
-                obj.put("ComputerName", info.GetComputerName());
-                obj.put("Ip", info.GetIp());
-                obj.put("OS", info.GetOs(pcuser));
-                obj.put("Program", info.GetProgram());
+          
 
-                out.print(obj);
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             out.close();
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
      * Handles the HTTP <code>GET</code> method.
      * @param request servlet request
@@ -79,5 +82,5 @@ public class GetDataInformationSystem extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }
-    // </editor-fold>
+// </editor-fold>
 }
