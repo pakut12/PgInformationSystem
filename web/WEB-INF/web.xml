@@ -4,9 +4,17 @@
         <servlet-name>GetDataInformationSystem</servlet-name>
         <servlet-class>src.GetDataInformationSystem</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddDataInformationSystem</servlet-name>
+        <servlet-class>src.AddDataInformationSystem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetDataInformationSystem</servlet-name>
         <url-pattern>/GetDataInformationSystem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddDataInformationSystem</servlet-name>
+        <url-pattern>/AddDataInformationSystem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -4,23 +4,19 @@
  */
 package src;
 
+import database.ConnectDatabase;
+import database.DatabaseFunction;
 import java.io.*;
-
-
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
+import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import org.json.simple.JSONObject;
-import service.InformationSystem;
-import service.InformationSystem.*;
-import service.ProgramFunction;
 
 /**
  *
  * @author pakutsing
  */
-public class GetDataInformationSystem extends HttpServlet {
+public class AddDataInformationSystem extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,30 +28,20 @@ public class GetDataInformationSystem extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            ProgramFunction Pg = new ProgramFunction();
-            InformationSystem info = new InformationSystem();
-            String pcuser = request.getHeader("USER-AGENT");
-            
-            
-
-            JSONObject obj = new JSONObject();
-            obj.put("User", info.GetUserPc());
-            obj.put("ComputerName", info.GetComputerName());
-            obj.put("Ip", info.GetIp());
-            obj.put("OS", info.GetOs(pcuser));
-            obj.put("ProgramFiles", Pg.FindProgram(info.GetProgramFiles(), info.GetProgramFilesx86()));
-            obj.put("Bit", info.GetBit(pcuser));
-
-            out.print(obj);
-
-        } catch (Exception e) {
-            e.printStackTrace();
+            Connection con = null;
+            try {
+                ConnectDatabase condb = new ConnectDatabase();
+                con = condb.getConnectDatabase();
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } finally {
             out.close();
         }
     }
 
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
      * Handles the HTTP <code>GET</code> method.
      * @param request servlet request
@@ -82,5 +68,5 @@ public class GetDataInformationSystem extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }
-// </editor-fold>
+    // </editor-fold>
 }

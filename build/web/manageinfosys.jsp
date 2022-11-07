@@ -12,7 +12,7 @@
     <head>
         <%@include file="share/head.jsp"%> 
     </head>
-  
+    
     <body>
         <%@include file="share/nav.jsp"%> 
         <form id="MyForm">
@@ -23,7 +23,8 @@
                         <div class="card-body">
                             <div class="card">
                                 <div class="card-header ">
-                                    InformationSystem
+                                    InformationSystem 
+                                    
                                 </div>
                                 <div class="card-body ">
                                     <div class="row">
@@ -44,25 +45,18 @@
                                                 <span class="input-group-text" >OS</span>
                                                 <input type="text" class="form-control text-center" name="OS" id="OS" readonly>
                                             </div>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" >Bit</span>
+                                                <input type="text" class="form-control text-center" name="Bit" id="Bit" readonly>
+                                            </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 overflow-auto" style="height:180px">
                                             <label>ProgramList</label>
                                             <hr>
-                                            <div class="row">
-                                                <div class="col-md-6 col-sm-12">
-                                                    <div class="text-center">ProgramFiles</div>
-                                                    <div id="ProgramFiles"></div>
-                                                    
-                                                </div>
-                                                <div class="col-md-6 col-sm-12">
-                                                    <div class="text-center">ProgramFiles(x86)</div>
-                                                    <div id="ProgramFilesx86"></div>
-                                                </div>
-                                            </div>
+                                            <div id="ProgramFiles"></div>
                                         </div>
                                         <div class="d-grid gap-2">
-                                            <button type="button" class="btn-grad" id="btn-getdata">เพิ่มข้อมูล</button>
-                                            <button type="button" class="reset" id="btn-getdata">ล้างค่า</button>
+                                            <button type="button" class="btn btn-success btn-sm mt-3" id="btn-getdata">เพิ่มข้อมูล</button>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +109,7 @@
                             $("#Ip").val(infosys.Ip);
                             $("#OS").val(infosys.OS);
                             $("#ProgramFiles").append(infosys.ProgramFiles);
-                            $("#ProgramFilesx86").append(infosys.ProgramFilesx86);
+                            $("#Bit").val(infosys.Bit); 
                         }
                     });
                 }

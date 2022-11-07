@@ -71,8 +71,20 @@ public class InformationSystem {
         return ProgramFilesx86;
     }
 
+    public static String GetBit(String pcuser) {
+        String UserAgent = pcuser.toLowerCase();
+        String Win = "";
+        if (UserAgent.contains("win32")) {
+            Win = "32 Bit";
+        } else if (UserAgent.contains("win64")) {
+            Win = "64 Bit";
+        }
+        return Win;
+    }
+
     public static String GetOs(String pcuser) {
         HashMap<String, String> OS = new HashMap<String, String>();
+        OS.put("windows nt 10.0", "Windows 10");
         OS.put("windows nt 6.3", "Windows 8.1");
         OS.put("windows nt 6.2", "Windows 8");
         OS.put("windows nt 6.1", "Windows 7");
@@ -97,6 +109,7 @@ public class InformationSystem {
         OS.put("webos", "Mobile");
 
         ArrayList<String> OSList = new ArrayList<String>();
+        OSList.add("windows nt 10.0");
         OSList.add("windows nt 6.3");
         OSList.add("windows nt 6.2");
         OSList.add("windows nt 6.1");

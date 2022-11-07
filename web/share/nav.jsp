@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<nav class="navbar navbar-expand-lg  sticky-top shadow navbar-dark  btn-grad1 ">
+<nav class="navbar navbar-expand-lg bg-light sticky-top shadow ">
     <div class="container">
         <a class="navbar-brand" href="#">PGInformationSystem</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
