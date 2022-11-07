@@ -56,7 +56,7 @@
                                             <div id="ProgramFiles"></div>
                                         </div>
                                         <div class="d-grid gap-2">
-                                            <button type="button" class="btn btn-success btn-sm mt-3" id="btn-getdata">เพิ่มข้อมูล</button>
+                                            <button type="button" class="btn btn-success btn-sm mt-3" id="btn-adddata">เพิ่มข้อมูล</button>
                                         </div>
                                     </div>
                                 </div>
@@ -113,12 +113,20 @@
                         }
                     });
                 }
-                $("#btn-getdata").click(function(){
-                    var dataform =  $("#MyForm").serialize();
-                    $("input:checkbox:checked").each(function () {
-                        alert($(this).val());
+                $("#btn-adddata").click(function(){
+                    $.ajax({
+                        type:"POST",
+                        url:"AddDataInformationSystem",
+                        data:{
+                            "Status":"I1"
+                        },
+                        success:function(data){
+                            //var infosys = $.parseJSON(data);
+                            console.log(data);
+                            
+                        }
                     });
-                    console.log(dataform);
+                    
                      
                 });
                 GetdataInfo();

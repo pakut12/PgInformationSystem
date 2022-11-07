@@ -11,7 +11,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
+
 import service.InformationSystem;
 import service.InformationSystem.*;
 import service.ProgramFunction;
@@ -36,8 +37,7 @@ public class GetDataInformationSystem extends HttpServlet {
             InformationSystem info = new InformationSystem();
             String pcuser = request.getHeader("USER-AGENT");
             
-            
-
+           
             JSONObject obj = new JSONObject();
             obj.put("User", info.GetUserPc());
             obj.put("ComputerName", info.GetComputerName());
